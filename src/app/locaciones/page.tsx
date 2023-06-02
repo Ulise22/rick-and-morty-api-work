@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const pageNumber = 2
 
 function getData () {
@@ -12,10 +14,11 @@ export default async function Locations () {
     <main>
       <h1>Locaciones</h1>
 
-      {locations.map(loc => {
+      {locations.map((loc : object) => {
         return (
           <section key={loc.id}>
             <h2>{loc.name}</h2>
+            <Link className='text-red-500' href='/locaciones/[id]' as={`/locaciones/${loc.id}`}>Entrar a Locación</Link>
           </section>
         )
       })}

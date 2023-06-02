@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const pageNumber = 1
 
 function getData () {
@@ -16,6 +18,7 @@ export default async function Episodes () {
         return (
           <section key={ep.id}>
             <h2> {ep.name} </h2>
+            <Link className='text-green-500' href='/episodios/[id]' as={`/episodios/${ep.id}`}>Ver</Link>
           </section>
         )
       })}
